@@ -8,7 +8,6 @@ body {
     background-color: #b7b7b7;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
 }
 
 .content {
@@ -127,6 +126,7 @@ header .calltoaction .waitList a:hover{
 .video-bg video{
     width: 100%;
     height: 100%;
+    min-height: 50%;
     object-fit: cover;
     animation: fadeIn 2s;
     z-index: -1;
@@ -308,11 +308,6 @@ header .calltoaction .waitList a:hover{
     
 }
 
-.slider .buttons {
-    position: absolute;
-    top: 45%;
-}
-
 
 .slider .buttons button {
     width: 50px;
@@ -327,10 +322,24 @@ header .calltoaction .waitList a:hover{
     font-weight: bold;
 }
 
+.slider .buttons {
+    position: absolute;
+    top: 45%;
+}
+
+.slider .buttons #prev {
+    position: absolute;
+    left: 20px;
+}
+.slider .buttons #next {
+    position: absolute;
+    right: 20px;
+}
+
 
 .slider .dots {
     position: absolute;
-    top: 100%;
+    bottom: 10px;
     color: white;
     left: 0;
     width: 100%;
@@ -558,6 +567,7 @@ footer .underline span {
     header .logo {
         display: none;
     }
+
     .nav-horizontal {
         position: absolute;
         display: block;
@@ -593,9 +603,7 @@ footer .underline span {
         width: 60px;
         font-size: 28px;
     }
-    .programs-wrapper div {
-        
-    }
+
 
 }
 
@@ -630,3 +638,58 @@ footer .underline span {
 
 }
 
+@media (max-width: 718px) {
+    .video-bg .absoluteText {
+        top: 20%;
+        left: 23%;
+        padding: 0;
+        
+    }
+}
+
+@media (max-width: 615px){
+    .video-bg .absoluteText{
+        gap: 25px;
+        top: 25%;
+    }
+    .video-bg .absoluteText .mainText {
+        margin: 0;
+        font-size: 17px;
+    }
+    .video-bg .absoluteText .minInfo {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 475px){
+    .video-bg .absoluteText {
+        top: 26%;
+        left: 5%;
+        width: 90%;
+    }
+}
+
+@media (max-width: 365px){
+    .video-bg .absoluteText {
+        top: 24%;
+
+    }
+}
+
+
+@media (max-width: 346px){
+    .video-bg .absoluteText {
+        top: 22%;
+
+    }
+    .nav-horizontal .logo a {
+       font-size: 18px;
+    }
+}
+
+@media (max-width: 320px){
+    .video-bg .absoluteText {
+        top: 19%;
+
+    }
+}
