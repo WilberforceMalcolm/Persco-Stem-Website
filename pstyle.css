@@ -34,6 +34,9 @@ header .logo{
     
 }
 
+.fa-xmark {
+    display: none;
+}
 
 header .logo img {
     width: 50px;
@@ -544,6 +547,7 @@ footer .underline span {
         top:  40px;
         left: 40px;
         font-size: 30px;
+        display: block;
     }
     header .navigationLinks ul {
         display: flex;
