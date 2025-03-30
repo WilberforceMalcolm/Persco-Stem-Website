@@ -64,9 +64,10 @@ header .logo a{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-header .navigationLinks ul{
+header .navigationLinks nav ul{
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    width: 100px;
 }
 
 header .navigationLinks ul li{
