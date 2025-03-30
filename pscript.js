@@ -128,6 +128,7 @@ slideInBtn.addEventListener('click', () => {
 
 
 
+function fetchBlogPosts() {
   fetch('https://newsapi.org/v2/top-headlines?category=technology&apiKey=e854aba1e9944bbf8793220962bbfdbb')
     .then(response => response.json())
     .then(data => {
@@ -141,6 +142,14 @@ slideInBtn.addEventListener('click', () => {
       document.getElementById('blogContainer').innerHTML = content;
     })
     .catch(error => console.log('Error:', error));
+}
+
+// Fetch initially when page loads
+fetchBlogPosts();
+
+// Re-fetch every 10 minutes (600,000 milliseconds)
+setInterval(fetchBlogPosts, 600000);
+
 
 
 
