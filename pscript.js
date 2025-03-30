@@ -129,7 +129,7 @@ slideInBtn.addEventListener('click', () => {
 
 
 function fetchBlogPosts() {
-  Request('https://newsapi.org/v2/top-headlines?category=technology&apiKey=e854aba1e9944bbf8793220962bbfdbb')
+  fetch('https://newsapi.org/v2/top-headlines?category=technology&apiKey=e854aba1e9944bbf8793220962bbfdbb')
     .then(response => response.json())
     .then(data => {
       let articles = data.articles;

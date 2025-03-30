@@ -21,7 +21,7 @@ header {
     flex-direction: row;
     padding: 2.5rem 5.3125rem;
     background-color: rgb(251, 239, 239);
-    width: 100%;
+    width: 100vw;
 }
 
 .nav-horizontal {
