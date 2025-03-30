@@ -13,6 +13,7 @@ body {
 .content {
     flex: 1;
 }
+
 header {
     display: flex;
     justify-content: space-between;
@@ -20,7 +21,7 @@ header {
     flex-direction: row;
     padding: 2.5rem 5.3125rem;
     background-color: rgb(251, 239, 239);
-    width: auto;
+    width: 100%;
 }
 
 .nav-horizontal {
