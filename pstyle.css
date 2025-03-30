@@ -99,7 +99,7 @@ header .navigationLinks ul li a:hover:after{
     position: absolute;
     content: '';
     width: 100%;
-    height:2px;
+    height: 2px;
     top: 16px;
     left: 0;
 }
