@@ -66,8 +66,7 @@ header .logo a{
 
 header .navigationLinks ul{
     display: flex;
-    width: 40vh;
-    justify-content: space-between;
+    gap: 20px;
 }
 
 header .navigationLinks ul li{
