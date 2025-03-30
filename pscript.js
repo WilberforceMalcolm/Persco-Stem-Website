@@ -127,8 +127,8 @@ slideInBtn.addEventListener('click', () => {
 
 
 
-apikey = '700489f0db7c35dc3a5da2badd3fc68b';
-url = 'https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=' + apikey;
+const apikey = '700489f0db7c35dc3a5da2badd3fc68b';
+const url = 'https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=' + apikey;
 
 fetch(url)
   .then(response => response.json())
