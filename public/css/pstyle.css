@@ -556,6 +556,7 @@ footer .underline span {
         flex-direction: column;
         margin-top: 100px;
         gap: 50px;
+        width: 100%;
     }
 
     header .navigationLinks ul a {
