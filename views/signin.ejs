@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persco Stem | <%= title %></title>
+    <link rel="stylesheet" href="css/signin.css">
+    
+</head>
+<body>
+    <!-- <div class="loaderContainer">
+        <video class="loader" src="./video/7868254-uhd_3840_2160_25fps.mp4" autoplay loop muted></video>
+    </div> -->
+    <div class="mainContainer">
+        <div class="leftSide"><video src="/videos/3141210-uhd_3840_2160_25fps.mp4" muted loop autoplay></video></div>
+        <div class="rightSide">
+            <main>
+                <div class="auth-content">
+                    <h1>Sign in to Persco Stem</h1>
+                    <div class="auth-connections">
+                        <form class="one" action="">
+                            <button class="auth-google" name="button" type="submit">
+                                <svg width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg> Sign in with Google</button>
+                        </form>
+                    </div>
+                    <hr class="divider sign-in">
+                    <div class="auth-form sign-in-form">
+                        <form class="two" action="">
+                            <div class="form-fields">
+                                <fieldset>
+                                    <label for="login">Username or Email</label>
+                                    <input type="text" name="login" id="login" class="text-input" autocorrect="off" autocapitalize="off" data-cypress="email">
+                                </fieldset>
+                                <fieldset>
+                                    <label for="password" class="password">Password
+                                        <a href="">Forgot?</a>
+                                    </label>
+                                    <input type="password" name="password" id="password" value class="text-input" data-cypress="password">
+                                </fieldset>
+                            </div>
+                            <input class="snbtn" data-cypress="submit-sign-in-btn" value="Sign In" type="submit">
+                        </form>
+                        <p class="auth-link">Don't have an account? 
+                            <a class="underline" href="">Sign Up</a>
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="/js/signin.js"></script>
+</body>
+</html>
