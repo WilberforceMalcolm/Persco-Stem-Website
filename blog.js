@@ -9,14 +9,16 @@ fetch(url)
     
     articles.forEach(article => {
       output += `
-        <div>
-          <h2>${article.title}</h2>
-          <p>${article.description}</p>
-          <a href="${article.url}" target="_blank">Read more</a>
-          <img src="${article.image}">
-          <p>${article.publisedAt}<p>
-          <p>${article.source.name}<p>
-          <p>${article.source.url}<p>
+        <div class="blog-card">
+            <img src="${article.image}">
+            <div class="blog-content">
+            <h2>${article.title}</h2>
+            <p>${article.description || 'No description available.'}</p>
+            <a href="${article.url}" target="_blank">Read more</a>
+            <p>${article.publisedAt}<p>
+            <p>${article.source.name}<p>
+            <p>${article.source.url}<p>
+            </div>
         </div>
       `;
     });
