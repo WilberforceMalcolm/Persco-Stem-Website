@@ -1,5 +1,5 @@
 const apikey = '700489f0db7c35dc3a5da2badd3fc68b';
-const url = 'https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=' + apikey;
+const url = 'https://gnews.io/api/v4/top-headlines?category=technology&lang=en&country=us&max=30&apikey=' + apikey;
 
 function fetchBlogs() {
 fetch(url)
