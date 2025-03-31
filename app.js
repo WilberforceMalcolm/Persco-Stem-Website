@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 3000; // Use Vercel’s port
 
 app.set('view engine', 'ejs');
-app.set('views', '');
+app.set('views', 'views');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
