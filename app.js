@@ -7,7 +7,12 @@ app.set('views', '/');
 
 app.listen(3000);
 
+
 app.get('/', (req, res)=> {
+    res.render('index', {title: 'Home'})
+})
+
+app.get('/index', (req, res)=> {
     res.render('index', {title: 'Home'})
 })
 
