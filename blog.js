@@ -1,6 +1,7 @@
 const apikey = '700489f0db7c35dc3a5da2badd3fc68b';
 const url = 'https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=' + apikey;
 
+function fetchBlogs() {
 fetch(url)
   .then(response => response.json())
   .then(data => {
@@ -15,7 +16,7 @@ fetch(url)
             <h2>${article.title}</h2>
             <p>${article.description || 'No description available.'}</p>
             <a href="${article.url}" target="_blank">Read more</a>
-            <p>${article.publisedAt}<p>
+            <p>${article.publishedAt}<p>
             <p>${article.source.name}<p>
             <p>${article.source.url}<p>
             </div>
@@ -27,3 +28,8 @@ fetch(url)
   })
   
   .catch(error => console.log('Error:', error));
+}
+
+fetchBlogs();
+
+setInterval(fetchBlogs, 86400000);
