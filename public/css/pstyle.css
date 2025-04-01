@@ -122,6 +122,28 @@ header .calltoaction .waitList a:hover{
 }
 
 
+.sign-up a{
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffffff;
+    padding: 10px 25px;
+    background: transparent;
+    border-radius: 10px;
+    transition: all 0.5s ease-in;
+    position: absolute;
+    border: 2px solid white;
+    right: 30px;
+    top: 15%;
+    z-index: 4;
+}
+
+.sign-up a:hover{
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0px 0px 8px 2px #000000;
+}
+
+
 
 .video-bg {
     width: 100%;
@@ -532,34 +554,44 @@ footer .underline span {
         position: fixed;
         top: 0;
         right: 0;
-        transform: translateX(450px);
+        transform: translateX(600px);
         height: 100vh;
-        width: 250px;
+        width: 300px;
         z-index: 5;
         display: flex;
         flex-direction: column;
         transition: 0.4s ease;
-        justify-content: flex-start;
-        gap: 40px;
+        justify-content: center;
+        gap: 60px;
     }
     header .fa-xmark {
         position: absolute;
-        top:  40px;
-        left: 40px;
-        font-size: 30px;
+        top:  50px;
+        left: 50px;
+        font-size: 40px;
         display: block;
     }
     header .navigationLinks ul {
         display: flex;
         flex-direction: column;
-        margin-top: 100px;
-        gap: 50px;
-        width: 100%;
+        gap: 20px;
+        width: 300px;
+    }
+    header .navigationLinks ul li {
+        padding: 20px;
+        text-align: center;
     }
 
-    header .navigationLinks ul a {
-        width: 100%;
-        padding: 20px 0px;
+    header .calltoaction .waitList a {
+        padding: 15px 40px;
+        margin-top: 40px;
+    }
+
+
+    .sign-up a{
+        top: 8%;
+        right: 4%;
+
     }
     header.slide-out {
         transform: translateX(0);
@@ -604,7 +636,90 @@ footer .underline span {
         font-size: 30px;
     }
 
+    .slider button {
+        display: none;
+    }
 
+
+}
+
+@media (max-height: 801px) {
+    .sign-up a {
+        top: 18%;
+    }
+    
+}
+
+@media (max-height: 930px){
+    .sign-up a {
+        top: 21%;
+    }
+}
+
+@media (max-height: 694px){
+    .sign-up a {
+        top: 25%;
+    }
+}
+
+@media (max-height: 560px){
+    .sign-up a {
+        top: 28%;
+    }
+}
+
+@media (max-height: 509px){
+    .sign-up a {
+        top: 30%;
+    }
+}
+
+@media (max-width: 718px) and (max-height: 930px) {
+    .sign-up a{
+        top: 10%;
+    }
+}
+
+
+@media (max-width: 1448px) and (max-height: 623px) {
+    .video-bg .absoluteText {
+        top: 35%;
+    }
+}
+
+
+
+
+@media (max-width: 321px) and (max-height: 534px) {
+    .sign-up a {
+        top: 13%;
+    }
+
+    .video-bg video {
+        height: 105vh;
+    }
+
+    .what {
+        transform: translateY(40px);
+    }
+
+}
+
+@media (max-width: 321px) and (max-height: 569px) { 
+    .sign-up a {
+        top: 12%;
+    }
+    .video-bg video {
+        height: 101vh;
+    }
+
+
+    body {
+        width: 100%;
+    }
+    .what {
+        transform: translateY(30px);
+    }
 }
 
 @media screen and (max-width: 600px) {
