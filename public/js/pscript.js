@@ -6,6 +6,7 @@ const nextBtn = document.querySelector(".next");
 const slider = document.getElementById("slider");
 const pagination = document.querySelector(".pagination");
 
+
 const slideOutBtn = document.querySelector(".fa-bars");
 const slideInBtn = document.querySelector(".fa-xmark");
 
@@ -123,8 +124,6 @@ slideInBtn.addEventListener('click', () => {
     document.querySelector("header").classList.remove('slide-out');
 
 });
-
-
 
 
 
