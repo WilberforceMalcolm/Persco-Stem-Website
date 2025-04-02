@@ -20,6 +20,10 @@ app.get('/signin', (req, res)=> {
     res.render('signin', {title: 'Sign In'})
 })
 
+app.get('/signup', (req, res)=> {
+    res.render('signup', {title: 'Sign Up'})
+})
+
 app.get('/blog', (req, res)=> {
     res.render('blog', {title: 'Blogs'})
 })

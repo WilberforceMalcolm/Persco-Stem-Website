@@ -768,7 +768,7 @@ footer .underline span {
 
 @media (max-width: 768px) {
     .slider {
-        height: 200px; /* Reduce height for smaller screens */
+        height: 300px; /* Reduce height for smaller screens */
     }
   }
 
