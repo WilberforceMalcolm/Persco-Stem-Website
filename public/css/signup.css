@@ -92,6 +92,17 @@ body{
     place-content: center;
 }
 
+.message-div {
+    width: 40vh;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 20px;
+}
 .mainContainer .rightContainer .auth-content .authInfo{
     display: flex;
     flex-direction: column;

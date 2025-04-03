@@ -31,10 +31,11 @@
             <div class="auth-content">
                 <div class="authInfo">
                     <h1>Create an account</h1>
-                    <p>Already have an account? <a href="./signin.html">Log in</a></p>
+                    <p>Already have an account? <a href="/signin">Log in</a></p>
                 </div>
                 <div class="auth-form sign-in-form">
                     <form class="one" action="">
+                        <div class="message-div" id="signUpMessage" style="display: none;">Account created Succesfully</div>
                         <div class="flexForm">
                             <div class="input">
                                 <div class="oneflex">
@@ -47,7 +48,7 @@
 
                             <p><input type="checkbox" name="checkbook" id="checkbox">I agree to the <a href="#">Terms & Conditions</a></p>
                         </div>
-                        <input type="submit" class="snbtn" data-cypress="submit-sign-in-btn" value="Create account">
+                        <input type="submit" class="snbtn" id="submitSignUp" data-cypress="submit-sign-in-btn" value="Create account">
                     </form>
                     <hr class="divider sign-in">
                     <div class="signBTN">
@@ -60,6 +61,6 @@
         </div>
     </div>
 
-    <script src="/js/signup.js"></script>
+    <script src="/js/signup.js" type="module"></script>
 </body>
 </html>
