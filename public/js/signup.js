@@ -1,13 +1,14 @@
 const { mongoose } = require("mongoose");
 
+
 const Schema = mongoose.Schema;
 
 const detailsSchema = new Schema({
-    firstName: {
+    firstname: {
         type: String,
         required: true
     },
-    lastName: {
+    lastname: {
         type: String,
         required: true
     },

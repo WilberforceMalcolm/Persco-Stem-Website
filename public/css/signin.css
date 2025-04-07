@@ -98,13 +98,14 @@ body {
     font-size:26px ;
 }
 
-.mainContainer .rightSide main .auth-content form.one button.auth-google{
+.mainContainer .rightSide main .auth-content form.one .auth-google{
     width: 100%;
     align-items: center;
     display: flex;
     cursor: pointer;
     justify-content: center;
     flex-direction: row;
+    color: black;
     gap: 10px;
     padding: 20px;
     border:1px solid #b6b6b6 ;

@@ -34,16 +34,16 @@
                     <p>Already have an account? <a href="/signin">Log in</a></p>
                 </div>
                 <div class="auth-form sign-in-form">
-                    <form class="one" action="">
+                    <form class="one" action="/signup" method="post">
                         <div class="message-div" id="signUpMessage" style="display: none;">Account created Succesfully</div>
                         <div class="flexForm">
                             <div class="input">
                                 <div class="oneflex">
-                                    <input type="text" placeholder="First name"  id="Fname" name="firstname">
-                                    <input type="text" placeholder="Last name"  id="Lname" name="lastname">
+                                    <input type="text" name="firstname" placeholder="First name"  id="Fname" required>
+                                    <input type="text" name="lastname" placeholder="Last name"  id="Lname" required>
                                 </div>
-                                <input type="email" placeholder="Email"  id="email" name="email">
-                                <input type="password" placeholder="Enter your password" name="password" id="password" autocomplete="current-password">
+                                <input type="email" name="email" placeholder="Email"  id="email" required> 
+                                <input type="password" name="password" placeholder="Enter your password" id="password" autocomplete="current-password" required>
                             </div>
 
                             <p><input type="checkbox" name="checkbook" id="checkbox">I agree to the <a href="#">Terms & Conditions</a></p>
@@ -61,6 +61,7 @@
         </div>
     </div>
 
-    <script src="/js/signup.js" type="module"></script>
+<script src="/js/signup.js" type="module"></script>
+
 </body>
 </html>

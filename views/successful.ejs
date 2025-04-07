@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting Up</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+    }
+
+    .message-box {
+      padding: 30px 40px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      font-size: 1.5rem;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hidden {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box" id="messageBox">Setting up your account...</div>
+
+  <script>
+    const box = document.getElementById("messageBox");
+
+    setTimeout(() => {
+      box.classList.add("hidden"); // fade out
+      setTimeout(() => {
+        box.textContent = "✅ Account created successfully!";
+        box.classList.remove("hidden"); // fade in
+
+        // Redirect after 2 more seconds
+        setTimeout(() => {
+          window.location.href = "/index"; // or wherever your homepage is
+        }, 2000);
+
+      }, 1000); // wait for fade out to complete
+    }, 3000); // wait 3s before changing message
+  </script>
+</body>
+</html>
