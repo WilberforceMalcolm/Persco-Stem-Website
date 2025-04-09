@@ -5,7 +5,8 @@ const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 const slider = document.getElementById("slider");
 const pagination = document.querySelector(".pagination");
-
+const bkgVideo = document.querySelector(".video-bg video");
+const fallBackImg = document.querySelector(".fall-back-img");
 
 const slideOutBtn = document.querySelector(".fa-bars");
 const slideInBtn = document.querySelector(".fa-xmark");
@@ -127,9 +128,12 @@ slideInBtn.addEventListener('click', () => {
 
 
 
-
-
-
+bkgVideo.onerror = () => {
+  fallBackImg.style.display = "block";
+}
+bkgVideo.onplay = () => {
+  fallBackImg.style.display = "none";
+}
 
 
 

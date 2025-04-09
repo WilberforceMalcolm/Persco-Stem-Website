@@ -129,6 +129,7 @@ header .calltoaction .waitList a:hover{
     object-fit: cover;
     /* background-position: center;
     background-size: cover; */
+    display: none;
 }
 
 .video-bg {
