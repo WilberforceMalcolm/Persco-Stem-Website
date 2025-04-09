@@ -60,7 +60,7 @@ app.get('/home', (req, res)=> {
 
 
 
-app.post("/signup", async (req, res, next) => {
+app.post("/signup", async (req, res) => {
     const data = {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
@@ -112,19 +112,19 @@ app.post("/signin", async (res, req) => {
 
 app.get('/auth/google', (req, res, next) => {
     console.log('User clicked the Google sign-in button');
-    next(); // pass to passport
+    next();
   }, passport.authenticate('google', { scope: ['profile', 'email'] }));
 
   app.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/signin' }),
     (req, res) => {
-      res.redirect('/home');
+      res.redirect('/index');
     }
   );
 
 app.get('/logout', (req, res) => {
   req.logout(() => {
-    res.redirect('/index');
+    res.redirect('/');
   });
 });
 
