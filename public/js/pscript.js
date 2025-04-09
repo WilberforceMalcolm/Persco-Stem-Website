@@ -129,7 +129,7 @@ slideInBtn.addEventListener('click', () => {
 
 
 bkgVideo.onerror = () => {
-  fallBackImg.style.display = "block";
+  fallBackImg.style.display = "block";  
 }
 bkgVideo.onplay = () => {
   fallBackImg.style.display = "none";
