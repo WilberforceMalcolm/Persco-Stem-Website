@@ -60,7 +60,7 @@ app.get('/home', (req, res)=> {
 
 
 
-app.post("/signup", async (req, res) => {
+app.post("/signup", async (req, res, next) => {
     const data = {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
@@ -82,7 +82,8 @@ app.post("/signup", async (req, res) => {
         const userdata = await collection.insertMany(data);
         console.log(userdata);
         res.render("successful");
-
+        next();
+        res.redirect("/home")
     }
 
 
@@ -99,7 +100,7 @@ app.post("/signin", async (res, req) => {
         const isPasswordMatch = await bcrypt.compare(req.body.password, check.password);
 
         if(isPasswordMatch){
-            res.render("index")
+            res.render("/home")
         }else{
             req.send("wrong password");
         }
@@ -117,13 +118,13 @@ app.get('/auth/google', (req, res, next) => {
   app.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/signin' }),
     (req, res) => {
-      res.redirect('/index');
+      res.redirect('/home');
     }
   );
 
 app.get('/logout', (req, res) => {
   req.logout(() => {
-    res.redirect('/');
+    res.redirect('/index');
   });
 });
 
