@@ -100,7 +100,7 @@ app.post("/signin", async (res, req) => {
         const isPasswordMatch = await bcrypt.compare(req.body.password, check.password);
 
         if(isPasswordMatch){
-            res.render("/home")
+            res.render("home")
         }else{
             req.send("wrong password");
         }
