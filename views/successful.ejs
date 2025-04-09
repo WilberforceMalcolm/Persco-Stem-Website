@@ -37,18 +37,17 @@
     const box = document.getElementById("messageBox");
 
     setTimeout(() => {
-      box.classList.add("hidden"); // fade out
+      box.classList.add("hidden");
       setTimeout(() => {
         box.textContent = "✅ Account created successfully!";
-        box.classList.remove("hidden"); // fade in
+        box.classList.remove("hidden"); 
 
-        // Redirect after 2 more seconds
         setTimeout(() => {
-          window.location.href = "/index"; // or wherever your homepage is
+          window.location.href = "/index"; 
         }, 2000);
 
-      }, 1000); // wait for fade out to complete
-    }, 3000); // wait 3s before changing message
+      }, 1000); 
+    }, 3000); 
   </script>
 </body>
 </html>

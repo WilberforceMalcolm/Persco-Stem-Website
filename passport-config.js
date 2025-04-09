@@ -1,6 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const User = require('./models/User'); // Adjust this path to your user model
+const User = require('./models/User'); 
 require('dotenv').config();
 
 
@@ -40,23 +40,6 @@ passport.deserializeUser(async (id, done) => {
 
 
 
-// const loaderContainer = document.querySelector('.loaderContainer')
-// const pageContent = document.querySelector('.main')
-
-// window.addEventListener('load', () => {
-//     loaderContainer.classList.add('hidden')
-//     pageContent.classList.add('visible')
-// });
-
-
-// passport-config.js
-
-
-
-
-
-
-
 
 const mongoose = require('mongoose');
 
@@ -77,5 +60,4 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-// Prevent "Cannot overwrite" error
 module.exports = mongoose.models.User || mongoose.model('User', userSchema);

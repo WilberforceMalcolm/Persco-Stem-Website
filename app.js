@@ -4,7 +4,7 @@ const app = express();
 const bcrypt = require("bcryptjs");
 const port = process.env.PORT || 8000;
 const passport = require('passport');
-require('./passport-config'); // import the config
+require('./passport-config'); 
 const session = require('express-session');
 
 
@@ -63,7 +63,6 @@ app.post("/signup", async (req, res) => {
         email: req.body.email,
         password: req.body.password
     }
-    //chaeck if user alredy exists in database
 
     const existingUser = await collection.findOne({email: data.email})
 
@@ -133,11 +132,6 @@ app.listen(port, () => {
 
 
 
-
-
-
-
-// app.js
 
 
 
