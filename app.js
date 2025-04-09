@@ -53,6 +53,10 @@ app.get('/blog', (req, res)=> {
     res.render('blog', {title: 'Blogs'})
 })
 
+app.get('/home', (req, res)=> {
+    res.render('home')
+})
+
 
 
 

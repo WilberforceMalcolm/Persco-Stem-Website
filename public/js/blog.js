@@ -1,3 +1,6 @@
+const footer = document.querySelector("footer");
+
+
 const apikey = '700489f0db7c35dc3a5da2badd3fc68b';
 const url = 'https://gnews.io/api/v4/top-headlines?category=technology&lang=en&country=us&apikey=' + apikey;
 
@@ -33,3 +36,9 @@ fetch(url)
 fetchBlogs();
 
 setInterval(fetchBlogs, 86400000);
+
+
+setTimeout (() => {
+  footer.style.opacity = 1;
+  footer.style.transition = "0.3s opacity";
+}, 1000);

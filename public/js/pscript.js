@@ -11,6 +11,8 @@ const fallBackImg = document.querySelector(".fall-back-img");
 const slideOutBtn = document.querySelector(".fa-bars");
 const slideInBtn = document.querySelector(".fa-xmark");
 
+const footer = document.querySelector("footer");
+
 let index = 0;
 const totalSlides = images.length;
 let autoSlide;
@@ -134,9 +136,6 @@ bkgVideo.onerror = () => {
 bkgVideo.onplay = () => {
   fallBackImg.style.display = "none";
 }
-
-
-
 
 
 
