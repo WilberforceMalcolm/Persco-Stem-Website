@@ -220,7 +220,6 @@ header .calltoaction .waitList a:hover{
     animation-timeline: view();
     animation-range: entry 0% cover 20%;
     border-radius: 10px;
-    padding: 20px;
 }
 
 
@@ -562,7 +561,7 @@ footer .underline span {
     }
 }
 
-@media (max-width: 718px){
+@media (max-width: 920px){
     header {
         position: fixed;
         top: 0;
