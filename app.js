@@ -6,11 +6,6 @@ const port = process.env.PORT || 8000;
 
 
 
-app.use(session({ secret: 'secret', resave: false, saveUninitialized: false }));
-app.use(passport.initialize());
-app.use(passport.session());
-
-
 
 
 app.set("views", path.join(__dirname, "views"));
