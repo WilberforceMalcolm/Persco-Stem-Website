@@ -64,7 +64,7 @@ app.get('/blog', (req, res)=> {
 })
 
 app.get('/home', (req, res)=> {
-    res.render('home')
+    res.render('index')
 })
 
 app.get('/gallery', (req, res)=> {
