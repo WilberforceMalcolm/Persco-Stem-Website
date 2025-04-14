@@ -582,6 +582,7 @@ footer .underline span {
         left: 50px;
         font-size: 40px;
         display: block;
+        color: #fff;
     }
     header .navigationLinks ul {
         display: flex;
