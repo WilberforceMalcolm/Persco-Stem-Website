@@ -6,7 +6,7 @@
 
 
 body {
-
+    background: transparent;
     display: flex;
     flex-direction: column;
 }
@@ -583,6 +583,7 @@ footer .underline span {
         font-size: 40px;
         display: block;
         color: #fff;
+        cursor: pointer;
     }
     header .navigationLinks ul {
         display: flex;
@@ -644,6 +645,7 @@ footer .underline span {
     .nav-horizontal .fa-bars {
         color: rgb(245, 245, 245);
         font-size: 30px;
+        cursor: pointer;
     }
 
     .slider button {
