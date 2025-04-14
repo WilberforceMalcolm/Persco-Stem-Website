@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Persco Stem Gallery</title>
+  <title>Modern Media Gallery</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/css/gallery.css">
 </head>
@@ -13,14 +14,13 @@
       <h1>Our Gallery</h1>
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="People">People</button>
-        <button class="filter-btn" data-filter="Achievements & Competitions">Achievements & Competitions</button>
-        <button class="filter-btn" data-filter="Projects">Projects</button>
+        <button class="filter-btn" data-filter="image">Images</button>
+        <button class="filter-btn" data-filter="video">Videos</button>
       </div>
     </div>
     
     <div class="gallery-grid">
-      <!-- Gallery items will be loaded here -->
+      <!-- Media items will be loaded here -->
     </div>
     
     <div class="load-more">
@@ -32,10 +32,16 @@
   <div class="lightbox">
     <div class="lightbox-content">
       <span class="close-btn">&times;</span>
-      <img src="" alt="" class="lightbox-img">
+      <div class="media-container">
+        <img src="" alt="" class="lightbox-img">
+        <video controls class="lightbox-video">
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div class="image-info">
-        <h3 class="image-title"></h3>
-        <p class="image-description"></p>
+        <h3 class="media-title"></h3>
+        <p class="media-description"></p>
       </div>
       <div class="lightbox-nav">
         <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>

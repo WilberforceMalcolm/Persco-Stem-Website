@@ -1,217 +1,279 @@
-// Sample gallery data
-const galleryData = [
-    {
-      id: 1,
-      src: 'images/g1.jpg',
-      title: 'Stemnnovation',
-      description: 'Regionals for Stemnnovation 2024',
-      category: 'Achievements & Competitions'
-    },
-    {
-      id: 2,
-      src: '/images/g2.jpg',
-      title: 'Tour',
-      description: 'Robotics tour',
-      category: 'Achievements & Competitions'
-    },
-    {
-      id: 3,
-      src: '/images/g3.jpg',
-      title: 'Team Portrait',
-      description: 'Group of innovative students in persco',
-      category: 'People'
-    },
-    {
-      id: 4,
-      src: '/images/g4.jpg',
-      title: 'Workshop',
-      description: 'Learning to Impact',
-      category: 'Achievements & Competitions'
-    },
-    {
-      id: 5,
-      src: '/images/g5.jpg',
-      title: 'Workshop and sessions',
-      description: 'Learning to impact',
-      category: 'Achievements & Competitions'
-    },
-    {
-      id: 6,
-      src: '/images/g6.jpg',
-      title: 'Workshop',
-      description: 'Collaborating with other bright minds across the country',
-      category: 'Achievements & Competitions'
-    },
-    {
-      id: 7,
-      src: '/images/g7.jpg',
-      title: '',
-      description: 'Providing solutions to problems using technology',
-      category: 'Achievements & Competitions'
-    },
-    {
-      id: 8,
-      src: '/images/g8.jpg',
-      title: 'Projects',
-      description: 'A smart vehicle that can get past obstacles',
-      category: 'Projects'
-    },
-  ];
+// Sample media data (images + videos)
+const mediaData = [
+  {
+    id: 1,
+    type: "image",
+    src: "/images/g1.jpg",
+    title: "Mountain Landscape",
+    description: "Beautiful view of mountains at sunrise",
+  },
+  {
+    id: 2,
+    type: "video",
+    src: "/videos/project.mp4",
+    title: "Nature Video",
+    description: "Relaxing nature scenes",
+  },
+  {
+    id: 3,
+    type: "image",
+    src: "/images/g2.jpg",
+    title: "Urban View",
+    description: "City skyline at night",
+  },
+  {
+    id: 4,
+    type: "video",
+    src: "/videos/pj.mp4",
+    title: "Wildlife Video",
+    description: "Animals in their natural habitat",
+  },
+  {
+    id: 5,
+    type: "image",
+    src: "/images/g3.jpg",
+    title: "Tropical Beach",
+    description: "White sand and blue water",
+  },
+  {
+    id: 6,
+    type: "video",
+    src: "/videos/3141210-uhd_3840_2160_25fps.mp4",
+    title: "Ocean Waves",
+    description: "Calming ocean waves",
+  },
+  {
+    id: 7,
+    type: "image",
+    src: "/images/g4.jpg",
+    title: "Tropical Beach",
+    description: "White sand and blue water",
+  },
+  {
+    id: 8,
+    type: "image",
+    src: "/images/g5.jpg",
+    title: "Tropical Beach",
+    description: "White sand and blue water",
+  },
+  {
+    id: 9,
+    type: "image",
+    src: "/images/g6.jpg",
+    title: "Tropical Beach",
+    description: "White sand and blue water",
+  },
+  {
+    id: 10,
+    type: "image",
+    src: "/images/g7.jpg",
+    title: "Tropical Beach",
+    description: "White sand and blue water",
+  },
+  {
+    id: 11,
+    type: "image",
+    src: "/images/g8.jpg",
+    title: "Tropical Beach",
+    description: "White sand and blue water",
+  },
   
-  // DOM Elements
-  const galleryGrid = document.querySelector('.gallery-grid');
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const loadMoreBtn = document.getElementById('load-more-btn');
-  const lightbox = document.querySelector('.lightbox');
-  const lightboxImg = document.querySelector('.lightbox-img');
-  const lightboxTitle = document.querySelector('.image-title');
-  const lightboxDesc = document.querySelector('.image-description');
-  const closeBtn = document.querySelector('.close-btn');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-  
-  // Variables
-  let currentFilter = 'all';
-  let currentImageIndex = 0;
-  let displayedItems = 6;
-  const itemsPerLoad = 2;
-  
-  // Initialize gallery
-  function initGallery() {
-    renderGalleryItems(galleryData.slice(0, displayedItems));
-    setupEventListeners();
-  }
-  
-  // Render gallery items
-  function renderGalleryItems(items) {
-    galleryGrid.innerHTML = '';
-    
-    items.forEach((item, index) => {
-      if (currentFilter === 'all' || item.category === currentFilter) {
-        const galleryItem = document.createElement('div');
-        galleryItem.className = `gallery-item ${item.category}`;
-        galleryItem.dataset.index = index;
-        
+];
+
+// DOM Elements
+const galleryGrid = document.querySelector(".gallery-grid");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const loadMoreBtn = document.getElementById("load-more-btn");
+const lightbox = document.querySelector(".lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const lightboxVideo = document.querySelector(".lightbox-video");
+const mediaTitle = document.querySelector(".media-title");
+const mediaDesc = document.querySelector(".media-description");
+const closeBtn = document.querySelector(".close-btn");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+
+// Variables
+let currentFilter = "all";
+let currentMediaIndex = 0;
+let displayedItems = 4;
+const itemsPerLoad = 2;
+
+// Initialize gallery
+function initGallery() {
+  renderMediaItems(mediaData.slice(0, displayedItems));
+  setupEventListeners();
+}
+
+// Render media items
+function renderMediaItems(items) {
+  galleryGrid.innerHTML = "";
+
+  items.forEach((item, index) => {
+    if (currentFilter === "all" || item.type === currentFilter) {
+      const galleryItem = document.createElement("div");
+      galleryItem.className = `gallery-item ${item.type}`;
+      galleryItem.dataset.index = index;
+
+      if (item.type === "image") {
         galleryItem.innerHTML = `
-          <img src="${item.src}" alt="${item.title}" class="gallery-img" loading="lazy">
+          <img src="${item.src}" alt="${item.title}" class="gallery-media">
           <div class="item-info">
             <h3>${item.title}</h3>
             <p>${item.description}</p>
           </div>
         `;
-        
-        galleryItem.addEventListener('click', () => openLightbox(index));
-        galleryGrid.appendChild(galleryItem);
+      } else if (item.type === "video") {
+        galleryItem.innerHTML = `
+          <video class="gallery-media" poster="https://via.placeholder.com/800x600?text=Video+Thumbnail">
+            <source src="${item.src}" type="video/mp4">
+          </video>
+          <i class="fas fa-play video-icon"></i>
+          <div class="item-info">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+          </div>
+        `;
       }
-    });
-  }
-  
-  // Filter gallery items
-  function filterGallery(filter) {
-    currentFilter = filter;
-    displayedItems = 6; // Reset displayed items when filtering
-    const filteredItems = galleryData.slice(0, displayedItems);
-    renderGalleryItems(filteredItems);
-    
-    // Update active button
-    filterButtons.forEach(btn => {
-      btn.classList.remove('active');
-      if (btn.dataset.filter === filter) {
-        btn.classList.add('active');
-      }
-    });
-  }
-  
-  // Open lightbox
-  function openLightbox(index) {
-    currentImageIndex = parseInt(index);
-    const filteredItems = currentFilter === 'all' 
-      ? galleryData 
-      : galleryData.filter(item => item.category === currentFilter);
-    
-    const item = filteredItems[currentImageIndex];
-    
+
+      galleryItem.addEventListener("click", () => openLightbox(index));
+      galleryGrid.appendChild(galleryItem);
+    }
+  });
+}
+
+// Filter media items
+function filterGallery(filter) {
+  currentFilter = filter;
+  displayedItems = 4; // Reset displayed items when filtering
+  const filteredItems = mediaData.slice(0, displayedItems);
+  renderMediaItems(filteredItems);
+
+  // Update active button
+  filterButtons.forEach((btn) => {
+    btn.classList.remove("active");
+    if (btn.dataset.filter === filter) {
+      btn.classList.add("active");
+    }
+  });
+}
+
+// Open lightbox
+function openLightbox(index) {
+  currentMediaIndex = parseInt(index);
+  const filteredItems =
+    currentFilter === "all"
+      ? mediaData
+      : mediaData.filter((item) => item.type === currentFilter);
+
+  const item = filteredItems[currentMediaIndex];
+
+  if (item.type === "image") {
+    lightboxImg.style.display = "block";
+    lightboxVideo.style.display = "none";
     lightboxImg.src = item.src;
     lightboxImg.alt = item.title;
-    lightboxTitle.textContent = item.title;
-    lightboxDesc.textContent = item.description;
-    
-    lightbox.classList.add('show');
-    document.body.style.overflow = 'hidden';
+  } else if (item.type === "video") {
+    lightboxImg.style.display = "none";
+    lightboxVideo.style.display = "block";
+    lightboxVideo.querySelector("source").src = item.src;
+    lightboxVideo.load();
   }
-  
-  // Close lightbox
-  function closeLightbox() {
-    lightbox.classList.remove('show');
-    document.body.style.overflow = 'auto';
+
+  mediaTitle.textContent = item.title;
+  mediaDesc.textContent = item.description;
+
+  lightbox.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+// Close lightbox
+function closeLightbox() {
+  lightbox.classList.remove("show");
+  document.body.style.overflow = "auto";
+  if (lightboxVideo.style.display === "block") {
+    lightboxVideo.pause();
   }
-  
-  // Navigate lightbox
-  function navigateLightbox(direction) {
-    const filteredItems = currentFilter === 'all' 
-      ? galleryData 
-      : galleryData.filter(item => item.category === currentFilter);
-    
-    if (direction === 'prev') {
-      currentImageIndex = (currentImageIndex - 1 + filteredItems.length) % filteredItems.length;
-    } else {
-      currentImageIndex = (currentImageIndex + 1) % filteredItems.length;
-    }
-    
-    const item = filteredItems[currentImageIndex];
+}
+
+// Navigate lightbox
+function navigateLightbox(direction) {
+  const filteredItems =
+    currentFilter === "all"
+      ? mediaData
+      : mediaData.filter((item) => item.type === currentFilter);
+
+  if (direction === "prev") {
+    currentMediaIndex = (currentMediaIndex - 1 + filteredItems.length) % filteredItems.length;
+  } else {
+    currentMediaIndex = (currentMediaIndex + 1) % filteredItems.length;
+  }
+
+  const item = filteredItems[currentMediaIndex];
+
+  if (item.type === "image") {
+    lightboxImg.style.display = "block";
+    lightboxVideo.style.display = "none";
     lightboxImg.src = item.src;
     lightboxImg.alt = item.title;
-    lightboxTitle.textContent = item.title;
-    lightboxDesc.textContent = item.description;
+  } else if (item.type === "video") {
+    lightboxImg.style.display = "none";
+    lightboxVideo.style.display = "block";
+    lightboxVideo.querySelector("source").src = item.src;
+    lightboxVideo.load();
   }
-  
-  // Load more items
-  function loadMoreItems() {
-    displayedItems += itemsPerLoad;
-    const itemsToShow = galleryData.slice(0, displayedItems);
-    renderGalleryItems(itemsToShow);
-    
-    // Hide load more button if all items are displayed
-    if (displayedItems >= galleryData.length) {
-      loadMoreBtn.style.display = 'none';
+
+  mediaTitle.textContent = item.title;
+  mediaDesc.textContent = item.description;
+}
+
+// Load more items
+function loadMoreItems() {
+  displayedItems += itemsPerLoad;
+  const itemsToShow = mediaData.slice(0, displayedItems);
+  renderMediaItems(itemsToShow);
+
+  // Hide load more button if all items are displayed
+  if (displayedItems >= mediaData.length) {
+    loadMoreBtn.style.display = "none";
+  }
+}
+
+// Setup event listeners
+function setupEventListeners() {
+  // Filter buttons
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => filterGallery(btn.dataset.filter));
+  });
+
+  // Lightbox
+  closeBtn.addEventListener("click", closeLightbox);
+  prevBtn.addEventListener("click", () => navigateLightbox("prev"));
+  nextBtn.addEventListener("click", () => navigateLightbox("next"));
+
+  // Close lightbox when clicking outside media
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
     }
-  }
-  
-  // Setup event listeners
-  function setupEventListeners() {
-    // Filter buttons
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => filterGallery(btn.dataset.filter));
-    });
-    
-    // Lightbox
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', () => navigateLightbox('prev'));
-    nextBtn.addEventListener('click', () => navigateLightbox('next'));
-    
-    // Close lightbox when clicking outside image
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
+  });
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.classList.contains("show")) {
+      if (e.key === "Escape") {
         closeLightbox();
+      } else if (e.key === "ArrowLeft") {
+        navigateLightbox("prev");
+      } else if (e.key === "ArrowRight") {
+        navigateLightbox("next");
       }
-    });
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (lightbox.classList.contains('show')) {
-        if (e.key === 'Escape') {
-          closeLightbox();
-        } else if (e.key === 'ArrowLeft') {
-          navigateLightbox('prev');
-        } else if (e.key === 'ArrowRight') {
-          navigateLightbox('next');
-        }
-      }
-    });
-    
-    // Load more button
-    loadMoreBtn.addEventListener('click', loadMoreItems);
-  }
-  
-  // Initialize the gallery when DOM is loaded
-  document.addEventListener('DOMContentLoaded', initGallery);
+    }
+  });
+
+  // Load more button
+  loadMoreBtn.addEventListener("click", loadMoreItems);
+}
+
+// Initialize the gallery when DOM is loaded
+document.addEventListener("DOMContentLoaded", initGallery);
