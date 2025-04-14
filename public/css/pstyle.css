@@ -611,7 +611,9 @@ footer .underline span {
     .nav-horizontal {
         position: absolute;
         display: block;
-        background-color: rgb(251, 239, 239);
+        background-color: rgba(255, 225, 225, 0.4);
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid white;
         z-index: 5;
         padding: 20px 25px;
         display: flex;
@@ -639,7 +641,7 @@ footer .underline span {
         border-radius: 10px;
     }
     .nav-horizontal .fa-bars {
-        color: rgb(0, 0, 0);
+        color: rgb(245, 245, 245);
         font-size: 30px;
     }
 
