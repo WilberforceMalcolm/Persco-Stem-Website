@@ -71,6 +71,10 @@ app.get('/gallery', (req, res)=> {
   res.render('gallery')
 })
 
+app.get('/about', (req, res)=> {
+  res.render('about')
+})
+
 
 
 
