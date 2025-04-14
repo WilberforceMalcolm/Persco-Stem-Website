@@ -67,6 +67,10 @@ app.get('/home', (req, res)=> {
     res.render('home')
 })
 
+app.get('/gallery', (req, res)=> {
+  res.render('gallery')
+})
+
 
 
 

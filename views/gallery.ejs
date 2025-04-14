@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Persco Stem Gallery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/gallery.css">
+</head>
+<body>
+  <div class="gallery-container">
+    <div class="gallery-header">
+      <h1>Our Gallery</h1>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="People">People</button>
+        <button class="filter-btn" data-filter="Achievements & Competitions">Achievements & Competitions</button>
+        <button class="filter-btn" data-filter="Projects">Projects</button>
+      </div>
+    </div>
+    
+    <div class="gallery-grid">
+      <!-- Gallery items will be loaded here -->
+    </div>
+    
+    <div class="load-more">
+      <button id="load-more-btn">Load More <i class="fas fa-arrow-down"></i></button>
+    </div>
+  </div>
+  
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <div class="lightbox-content">
+      <span class="close-btn">&times;</span>
+      <img src="" alt="" class="lightbox-img">
+      <div class="image-info">
+        <h3 class="image-title"></h3>
+        <p class="image-description"></p>
+      </div>
+      <div class="lightbox-nav">
+        <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/js/gallery.js"></script>
+</body>
+</html>
