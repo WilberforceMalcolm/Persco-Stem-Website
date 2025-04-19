@@ -343,7 +343,7 @@ footer .underline span {
         right: 0;
         transform: translateX(700px);
         height: 100vh;
-        width: 350px;
+        width: 50%;
         z-index: 5;
         display: flex;
         flex-direction: column;
