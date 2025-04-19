@@ -121,11 +121,13 @@ nav {
     align-items: center;
     text-align: center;
     color: var(--white);
+
 }
 
 .about-hero h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
+    font-size: white;
 }
 
 .about-hero p {

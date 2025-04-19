@@ -277,3 +277,12 @@ function setupEventListeners() {
 
 // Initialize the gallery when DOM is loaded
 document.addEventListener("DOMContentLoaded", initGallery);
+
+document.querySelector(".home-btn").addEventListener("mouseenter", () => {
+  document.querySelector(".home-btn svg").style.fill = "white";
+});
+
+document.querySelector(".home-btn").addEventListener("mouseleave", () => {
+  document.querySelector(".home-btn svg").style.fill = "  rgb(11, 247, 255)";
+})
+  
