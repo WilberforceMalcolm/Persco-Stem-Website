@@ -1,26 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #b7b7b7;
-    margin: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
-
-#blogContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 100%;
-    margin-top: 10rem;
-
-}
-
 .page-items {
     flex: 1;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 2.5rem 5.3125rem;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0rem 0rem 0.4rem 0.02rem rgb(92, 92, 92);
+}
+
+.nav-horizontal {
+    display: none;
+}
+
+header .logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+header .fa-xmark {
+    display: none;
+}
+
+header .logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+
+}
+
+
+@keyframes rotate {
+    0%{
+    opacity: 0.5;}
+    100%{
+    opacity: 1;}
+}
+
+header .logo a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header .navigationLinks ul{
+    display: flex;
+    gap: 1.875rem;
+}
+
+header .navigationLinks ul li{
+    list-style: none;
+}
+
+header .navigationLinks ul li a{
+    text-decoration: none;
+    position: relative;
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+header .navigationLinks ul li a:hover{
+    text-shadow: 1px 1px 3px #00000058;
+}
+
+header .navigationLinks ul li a:after{
+    position: absolute;
+    content: '';
+    width:  0%;
+    height: 1.5px;
+    background-color: black;
+    top: 24px;
+    left: 0;
+    box-shadow: 1px 1px 3px #000;
+    transition: width 0.3s ease-in;
+}
+
+header .navigationLinks ul li a:hover:after{
+    width: 100%;
+}
+header .navigationLinks ul li a.active-link {
+    color: blue;
+}
+
+header .navigationLinks ul li a.active-link:hover:after {
+    width: 100%;
+}
+
+header .navigationLinks ul li a.active-link:after {
+    background-color: blue;
+    width: 50%;
+}
+
+
+
+header .calltoaction .waitList a{
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: blue;
+    font-size: 18px;
+}
+
+
+#blogContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+}
 
 .blog-card {
     background: white;
@@ -29,7 +141,7 @@ body {
     overflow: hidden;
     transition: transform 0.3s;
     min-height: 20vh;
-    max-width: 100%;
+    max-width: 100%;    
 }
 
 .blog-card:hover {
@@ -75,9 +187,271 @@ body {
 
 footer {
     opacity: 0;
+    width: 100%;
+    background-color: rgb(251, 239, 239);
+    padding: 100px 0 30px;
+    font-size: 13px;
+    line-height: 20px;
+    box-shadow: 0rem 0rem 0.3rem  0.02rem #3d3d3d;
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+footer .row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+footer .col {
+    flex-basis: 20%;
+    padding: 10px;
+}
+footer .col:nth-child(2), footer .col:nth-child(3) {
+    flex-basis: 15%;
+}
+
+footer .footer-logo {
+    width: 100px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+footer .col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+
+}
+
+footer .email-id {
+    width: fit-content;
+    border-bottom: 1px solid #1b1b1b;
+    margin: 20px 0;
+}
+
+footer ul li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #1b1b1b;
+}
+
+footer form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #1b1b1b;
+    margin-bottom: 50px;
+}
+
+footer form .fa-regular {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+footer form input {
+    width: 100%;
+    background: transparent;
+    color: #1b1b1b;
+    border: 0;
+    outline: none;
+
+}
+
+footer form button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+footer form button .fa-solid {
+    font-size: 16px;
+    color: #1b1b1b;
+
+}
+footer .social-icons {
+    width: 300px;
+    display: flex;
+}
+footer .social-icons .fab{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color:#1b1b1b;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+footer hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #1b1b1b;
+    margin: 20px auto;
+}
+
+footer .copyright {
+    text-align: center;
+}
+
+footer .underline {
+    width: 100%;
+    height: 5px;
+    background-color: #1b1b1b;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+
+footer .underline span {
+    width: 15px;
+    height: 100%;
+    background-color: #c2c2c2;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
 }
 
 
+@media (max-width: 725px) {
+    header .calltoaction .waitList a{
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 920px){
+    header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(700px);
+        height: 100vh;
+        width: 350px;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        transition: 0.4s ease;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    header .fa-xmark {
+        position: absolute;
+        top:  50px;
+        left: 50px;
+        font-size: 40px;
+        display: block;
+        color: black;
+        cursor: pointer;
+    }
+    header .navigationLinks ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 300px;
+    }
+    header .navigationLinks ul li {
+        padding: 20px;
+        text-align: center;
+    }
+
+    header .calltoaction .waitList a {
+        padding: 15px 40px;
+        margin-top: 40px;
+    }
+
+
+    header.slide-out {
+        transform: translateX(0);
+    }
+
+    header .logo {
+        display: none;
+    }
+
+    .nav-horizontal {
+        position: absolute;
+        display: block;
+        background-color: white;
+        z-index: 5;
+        padding: 20px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-horizontal .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .nav-horizontal .logo a {
+        font-size: 1.3rem;
+        text-decoration: none;
+        color: black;
+        font-weight: 800;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .nav-horizontal .logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+    }
+
+    .nav-horizontal .fa-bars {
+        color: black;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .slider button {
+        display: none;
+    }
+
+    .pagination {
+        display: none;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px){
+    footer {
+        bottom: unset;
+    }
+
+    footer .col {
+        flex-basis: 100%;
+    }
+    footer .col:nth-child(2), footer .col:nth-child(3) {
+        flex-basis: 100%;
+    }
+}
 
 
 @media (max-width: 718px){

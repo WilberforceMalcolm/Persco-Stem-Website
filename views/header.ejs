@@ -38,6 +38,7 @@
 
     links.forEach(link => {
     if (link.getAttribute('href') === currentURL) {
+    document.querySelector(".active-link").classList.remove("active-link");
     link.classList.add('active-link');
     
     }

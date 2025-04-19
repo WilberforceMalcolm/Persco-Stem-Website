@@ -1,4 +1,5 @@
-
+const slideOutBtn = document.querySelector(".fa-bars");
+const slideInBtn = document.querySelector(".fa-xmark");
 
 // Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -39,3 +40,34 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('scroll', animateOnScroll);
+
+slideOutBtn.addEventListener('click', () => {
+    document.querySelector("header").classList.add('slide-out');
+  
+  });
+  
+  slideInBtn.addEventListener('click', () => {
+    document.querySelector("header").classList.remove('slide-out');
+  
+  });
+
+
+let startX;
+
+document.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+
+document.addEventListener('touchend', (e) => {
+  const endX = e.changedTouches[0].clientX;
+  const diffX = endX - startX;
+
+
+  if (startX < 50 && diffX > 50) {
+    document.querySelector("header").classList.remove('slide-out');
+  }
+
+  if (startX > 50 && diffX < -50) {
+    document.querySelector("header").classList.add('slide-out');
+  }
+});

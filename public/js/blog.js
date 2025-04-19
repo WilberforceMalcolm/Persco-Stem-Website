@@ -1,6 +1,6 @@
 const footer = document.querySelector("footer");
-
-
+const slideOutBtn = document.querySelector(".fa-bars");
+const slideInBtn = document.querySelector(".fa-xmark");
 const apikey = '700489f0db7c35dc3a5da2badd3fc68b';
 const url = 'https://gnews.io/api/v4/top-headlines?category=technology&lang=en&country=us&apikey=' + apikey;
 
@@ -37,8 +37,18 @@ fetchBlogs();
 
 setInterval(fetchBlogs, 86400000);
 
+slideOutBtn.addEventListener('click', () => {
+  document.querySelector("header").classList.add('slide-out');
 
-setTimeout (() => {
+});
+
+slideInBtn.addEventListener('click', () => {
+  document.querySelector("header").classList.remove('slide-out');
+
+});
+
+
+setTimeout(()=> {
   footer.style.opacity = 1;
-  footer.style.transition = "0.3s opacity";
-}, 1000);
+  footer.style.transition = "0.3s all";
+},3000)
