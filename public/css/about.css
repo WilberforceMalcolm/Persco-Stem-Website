@@ -139,11 +139,15 @@ header .calltoaction .waitList a{
     padding: 0 40px;
 }
 
+.container h1 {
+    color: white;
+}
+
 section {
     padding: 100px 0;
 }
 
-h1, h2, h3, h4 {
+h2, h3, h4 {
     margin-bottom: 20px;
     color: var(--dark-color);
 }
