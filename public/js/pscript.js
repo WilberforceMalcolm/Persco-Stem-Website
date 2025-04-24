@@ -5,13 +5,25 @@ const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 const slider = document.getElementById("slider");
 const pagination = document.querySelector(".pagination");
-const bkgVideo = document.querySelector(".video-bg video");
 const fallBackImg = document.querySelector(".fall-back-img");
 
 const slideOutBtn = document.querySelector(".fa-bars");
 const slideInBtn = document.querySelector(".fa-xmark");
 
 const footer = document.querySelector("footer");
+
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    // Remove "active" class from all cards first (optional: for single open)
+    cards.forEach(c => c !== card && c.classList.remove('active'));
+
+    // Toggle active class
+    card.classList.toggle('active');
+  });
+});
+
 
 let index = 0;
 const totalSlides = images.length;
@@ -102,9 +114,9 @@ slides.addEventListener("touchend", (e) => {
 slider.addEventListener("mouseenter", stopAutoplay);
 slider.addEventListener("mouseleave", startAutoplay);
 
-// Start autoplay on page load & set active dot
+
 startAutoplay();
-updateSlider();
+updateSlider(setTimeout, 3000);
 
 
 

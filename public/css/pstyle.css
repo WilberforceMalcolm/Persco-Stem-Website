@@ -24,6 +24,8 @@ header {
     background-color: white;
     width: 100%;
     box-shadow: 0rem 0rem 0.4rem 0.02rem rgb(92, 92, 92);
+    z-index: 2;
+    border-bottom-right-radius: 50px;
 
 }
 
@@ -128,22 +130,20 @@ header .calltoaction .waitList a{
 
 
 .video-bg {
+    background-image: url("/images/background5.jpg");
     width: 100%;
     height: 100vh;  
     position: fixed;
-    z-index: -2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: -1;
+    animation: fadeIn 2s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.video-bg .fall-back-img{
-    width: 100%;
-    height: 100vh;
-    min-height: 50%;
-    object-fit: cover;
-    animation: fadeIn 2s;
-    z-index: -1;
-    filter: brightness(60%);
-    
-}
 
 @keyframes fadeIn {
     0%{opacity: 0;}
@@ -151,14 +151,12 @@ header .calltoaction .waitList a{
 }
 
 .video-bg .absoluteText{
-    position: absolute;
-    top: 30%;
     display: flex;
-    width: 60%;
+    width: 100%;
     flex-direction: column;
     gap: 3rem;
     justify-content: space-between;
-    padding: 0px 70px;
+    padding: 0px 50px;
 }
 
 .video-bg .absoluteText .mainText {
@@ -214,15 +212,9 @@ header .calltoaction .waitList a{
 }
 
 .apart-video-bg {
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
+    background-color: white;
     z-index: 2;
-    margin-top: 100vh;
-    border: 2px solid white;
-    animation: appearApart linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 20%;
-    border-radius: 10px;
+    margin-top: 70vh;   
 }
 
 
@@ -237,10 +229,10 @@ header .calltoaction .waitList a{
     align-items: center;
 }
 
-.programs-wrapper div {
-    box-shadow: 0rem 0rem 1rem 0.02rem rgb(76, 76, 76);
+.programs-wrapper .card {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     min-height: 50vh;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     display: flex;
     justify-content: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -250,20 +242,42 @@ header .calltoaction .waitList a{
     text-align: center;
     padding: 15px;
     gap: 10px;
-    background-color: rgb(251, 239, 239);
+    background-color: rgb(248, 249, 250);
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 50%;
+    cursor: pointer;
 }
 
-.programs-wrapper div img {
-    width: 150px;
+.programs-wrapper .card .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
 }
 
-.programs-wrapper div .cap-clip {
-    width: 90%;
-    height: 140px;
+.programs-wrapper .card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+.programs-wrapper .card p {
+    color: #6b7280;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+.extra-content {
+    display: none;
+    margin-top: 1rem;
+    color: #4b5563;
+    font-size: 0.95rem;
 }
+
+.card.active .extra-content {
+    display: block;
+}
+
 
 @keyframes appear {
     from {
@@ -278,21 +292,10 @@ header .calltoaction .waitList a{
     }
 } 
 
-@keyframes appearApart {
-    from {
-
-        transform: scale(0.6);
-
-    }
-    to {
-
-        transform: scale(1);
-
-    }
-} 
 .programs-wrapper div:hover {
     transition: 0.3s ease-in;
-    box-shadow: 0rem 0rem 0.5rem 0.02rem rgb(70, 86, 255);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
 }
 
 
@@ -316,21 +319,18 @@ header .calltoaction .waitList a{
 .slider {
     position: relative;
     width: 100%;  /* 100% of the screen width */
-    max-width: 96vw;  /* Optional: Limit max width */
+    max-width: 100vw;  /* Optional: Limit max width */
     height: 600px;  /* Set a fixed height */
     margin: auto;
     overflow: hidden;
-    border-radius: 10px; 
     margin-bottom: 50px;
-    border: 4px solid white;
-    box-shadow: 0rem 0rem 0.5rem 0.02rem rgb(84, 84, 84);
   }
   
-  .slides img {
+.slides img {
     width: 100%;
     height: 100%;
     object-fit: cover; 
-  }
+}
 
 .slides {
     display: flex;
@@ -382,6 +382,7 @@ footer {
     padding: 100px 0 30px;
     font-size: 13px;
     line-height: 20px;
+    border-top-left-radius: 50px;
     box-shadow: 0rem 0rem 0.3rem  0.02rem #3d3d3d;
     color: black;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -541,12 +542,8 @@ footer .underline span {
 }
 
 @media(max-width: 798px) {
-    .video-bg .absoluteText {
-        top: 35%;
-    }
     .video-bg .absoluteText .mainText{
        line-height: 50px;
-       margin-bottom: 20px;
        font-size: 22px;
         
     }
@@ -586,7 +583,7 @@ footer .underline span {
         left: 50px;
         font-size: 40px;
         display: block;
-        color: #fff;
+        color: black;
         cursor: pointer;
     }
     header .navigationLinks ul {
@@ -663,22 +660,7 @@ footer .underline span {
 
 }
 
-
-
-@media (max-width: 1448px) and (max-height: 623px) {
-    .video-bg .absoluteText {
-        top: 35%;
-    }
-}
-
-
-
-
 @media (max-width: 321px) and (max-height: 534px) {
-
-    .video-bg video {
-        height: 105vh;
-    }
 
     .what {
         transform: translateY(40px);
@@ -687,15 +669,6 @@ footer .underline span {
 }
 
 @media (max-width: 321px) and (max-height: 569px) { 
-
-    .video-bg video {
-        height: 101vh;
-    }
-
-
-    body {
-        width: 100%;
-    }
     .what {
         transform: translateY(30px);
     }
@@ -741,17 +714,6 @@ footer .underline span {
 }
 
 
-@media(max-width: 849px) {
-    .video-bg .absoluteText {
-        flex-direction: column;
-        justify-content: center;
-        top: 28%;
-        left: 23%;
-        padding: 0;
-    }
-
-}
-
 @media (max-width: 768px) {
     .slider {
       width: 95%;
@@ -771,7 +733,6 @@ footer .underline span {
 @media (max-width: 615px){
     .video-bg .absoluteText{
         gap: 25px;
-        top: 25%;
     }
     .video-bg .absoluteText .mainText {
         margin: 0;
@@ -782,35 +743,9 @@ footer .underline span {
     }
 }
 
-@media (max-width: 475px){
-    .video-bg .absoluteText {
-        top: 26%;
-        left: 5%;
-        width: 90%;
-    }
-}
-
-@media (max-width: 365px){
-    .video-bg .absoluteText {
-        top: 24%;
-
-    }
-}
-
 
 @media (max-width: 346px){
-    .video-bg .absoluteText {
-        top: 22%;
-
-    }
     .nav-horizontal .logo a {
        font-size: 18px;
-    }
-}
-
-@media (max-width: 320px){
-    .video-bg .absoluteText {
-        top: 19%;
-
     }
 }
