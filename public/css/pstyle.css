@@ -230,7 +230,7 @@ header .calltoaction .waitList a{
 }
 
 .programs-wrapper .card {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgb(110, 110, 110);
     min-height: 50vh;
     border-radius: 1.25rem;
     display: flex;
@@ -292,29 +292,13 @@ header .calltoaction .waitList a{
     }
 } 
 
-.programs-wrapper div:hover {
+.programs-wrapper .card:hover {
     transition: 0.3s ease-in;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     transform: translateY(-8px);
 }
 
 
-.programs-wrapper div a {
-    text-decoration: none;
-    background-color: blue;
-    color: white;
-    font-family: monospace;
-    border-radius: 20px;
-    padding: 10px 20px;
-    align-self: flex-end;
-}
-
-.programs-wrapper div a:hover {
-    background-color: white;
-    border: 1px solid blue;
-    color: black;
-    transition: 0.4s ease-in;
-}
 
 .slider {
     position: relative;
@@ -747,5 +731,18 @@ footer .underline span {
 @media (max-width: 346px){
     .nav-horizontal .logo a {
        font-size: 18px;
+    }
+}
+
+
+@media(max-width: 921px){
+    .apart-video-bg{
+        margin-top: 90vh;
+    }
+}
+
+@media(min-height: 895px){
+    .apart-video-bg{
+        margin-top: 75vh;
     }
 }
