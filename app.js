@@ -20,9 +20,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 const pages = [
     { url: '/index', changefreq: 'daily', priority: 1.0 },
     { url: '/about', changefreq: 'monthly', priority: 0.7 },
-    { url: '/news', changefreq: 'daily', priority: 0.8 },
+    { url: '/blog', changefreq: 'daily', priority: 0.8 },
     { url: '/gallery', changefreq: 'weekly', priority: 0.8 },
-    { url: '/signin', changefreq: 'weekly', priority: 0.8 },
+    { url: '/contact', changefreq: 'weekly', priority: 0.8 },
   ];
   
 
@@ -37,7 +37,7 @@ const pages = [
     pages.forEach(page => {
       sitemap += `
         <url>
-          <loc>https://perscostem.vercel.app${page.url}</loc>
+          <loc>https://perscostem-wilberforcemalcolms-projects.vercel.app${page.url}</loc>
           <changefreq>${page.changefreq}</changefreq>
           <priority>${page.priority}</priority>
         </url>\n`;
