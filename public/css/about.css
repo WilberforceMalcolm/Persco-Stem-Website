@@ -606,6 +606,11 @@ footer .underline span {
 
 
 }
+@media (max-width: 920px) {
+    .about-intro-content {
+        flex-direction: column;
+    }
+}
 
 @media screen and (max-width: 600px) {
     header {
