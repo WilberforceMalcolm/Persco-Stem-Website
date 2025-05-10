@@ -6,8 +6,6 @@ const port = process.env.PORT || 8000;
 
 
 
-
-
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
 
@@ -30,6 +28,14 @@ app.get('/blog', (req, res)=> {
 
 app.get('/home', (req, res)=> {
     res.render('index')
+})
+
+app.get('/sitemap.xml', (req, res)=> {
+  res.render('index')
+})
+
+app.get('/home', (req, res)=> {
+  res.render('index')
 })
 
 app.get('/gallery', (req, res)=> {
