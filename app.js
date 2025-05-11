@@ -30,9 +30,6 @@ app.get('/home', (req, res)=> {
     res.render('index')
 })
 
-app.get('/sitemap.xml', (req, res)=> {
-  res.render('index')
-})
 
 app.get('/home', (req, res)=> {
   res.render('index')
