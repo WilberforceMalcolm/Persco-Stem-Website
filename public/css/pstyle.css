@@ -8,7 +8,7 @@
 body {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    width: 100%;
 }
 
 .content {
@@ -22,12 +22,11 @@ header {
     flex-direction: row;
     padding: 2.5rem 5.3125rem;
     background-color: white;
-    width: 100vw;
+    width: 100%;
     box-shadow: 0rem 0rem 0.4rem 0.02rem rgb(92, 92, 92);
     z-index: 2;
     border-bottom-right-radius: 50px;
-    position: static;
-    top: 0;
+
 }
 
 .nav-horizontal {
@@ -225,14 +224,18 @@ header .calltoaction .waitList a{
     gap: 30px;
     justify-content: center;
     padding: 0px 20px;
+    padding-bottom: 40px;
     margin-top: 30px;
     margin-bottom: 80px;
     align-items: center;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .programs-wrapper .card {
     box-shadow: 0 10px 25px rgb(110, 110, 110);
     min-height: 50vh;
+    max-width: 100%;
     border-radius: 1.25rem;
     display: flex;
     justify-content: center;
